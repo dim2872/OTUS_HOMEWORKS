@@ -30,12 +30,29 @@ def filter_numbers(data, flag):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    data.sort()
-    if flag == 'odd':
-        return [number for number in data if number % 2 != 0]
-    elif flag == 'even':
-        return [number for number in data if number % 2 == 0]
-    elif flag == 'prime':
+ODD = "odd"
+EVEN = "even"
+PRIME = "prime"
+
+def filter_numbers(data, flag):
+        """
+        функция, которая на вход принимает список из целых чисел,
+        и возвращает только чётные/нечётные/простые числа
+        (выбор производится передачей дополнительного аргумента)
+
+        #>>> filter_numbers([1, 2, 3], ODD)
+        <<< [1, 3]
+        #>>> filter_numbers([2, 3, 4, 5], EVEN)
+        <<< [2, 4]
+        """
+        if flag == ODD:
+            return [number for number in data if number % 2 != 0]
+        elif flag == EVEN:
+            return [number for number in data if number % 2 == 0]
+        elif flag == PRIME:
+            return prime_numbers(data)
+
+    def prime_numbers(data):
         lst = []
         for i in range(len(data)):
             for a in range(2, data[i]):
@@ -44,4 +61,4 @@ def filter_numbers(data, flag):
                 elif (data[i] // a) == 1:
                     lst.append(data[i])
                     break
-    return lst
+        return lst
