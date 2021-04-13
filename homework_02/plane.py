@@ -1,14 +1,15 @@
 """
 создайте класс `Plane`, наследник `Vehicle`
 """
-from base import Vehicle
-import exceptions
+from homework_02.base import Vehicle
+from homework_02 import exceptions
 
 
 class Plane(Vehicle):
     def __init__(self, cargo, max_cargo):
         self.max_cargo = max_cargo
         self.cargo = cargo
+        super().__init__(self, weight=0.0, started=False, fuel=0.0, fuel_consumption=0.0)
 
     def load_cargo(self, add_cargo):
         if self.max_cargo <= self.cargo + add_cargo:
