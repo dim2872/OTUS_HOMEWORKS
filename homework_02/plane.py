@@ -6,10 +6,10 @@ from homework_02 import exceptions
 
 
 class Plane(Vehicle):
-    def __init__(self, cargo, max_cargo, weight, started, fuel, fuel_consumption):
+    def __init__(self, cargo, max_cargo, weight, fuel, fuel_consumption):
         self.max_cargo = max_cargo
         self.cargo = cargo
-        super().__init__(self, weight, started, fuel, fuel_consumption)
+        super().__init__(self, weight, fuel, fuel_consumption)
 
     def load_cargo(self, add_cargo):
         if self.max_cargo <= self.cargo + add_cargo:
