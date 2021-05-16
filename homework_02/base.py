@@ -26,4 +26,4 @@ class Vehicle(ABC):
             raise exceptions.NotEnoughFuel
         else:
             self.fuel -= total_fuel
-            return self.fuelgi
+            return self.fuel
