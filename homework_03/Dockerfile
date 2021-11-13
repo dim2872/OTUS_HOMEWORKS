@@ -14,4 +14,3 @@ COPY main.py .
 
 CMD uvicorn main:app --host=0.0.0.0
 
-CMD docker run -p 8001:8000 main-app
